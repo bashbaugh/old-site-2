@@ -18,3 +18,9 @@ a {
 * {
   box-sizing: border-box;
 } */
+
+body {
+  @apply bg-bg-dark;
+  @apply text-text-light;
+  @apply font-open-sans;
+}
