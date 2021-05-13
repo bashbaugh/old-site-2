@@ -17,7 +17,7 @@ module.exports = {
         border: {
           dark: '#22272E'
         },
-        'text-faded': {
+        faded: {
           light: '#F8F8F880'
         },
         link: {
@@ -28,14 +28,14 @@ module.exports = {
         }
       },
       fontFamily: {
-        'averia-sans': ['"Averia Sans Libre"', 'cursive'],
         'averia-serif': ['"Averia Serif Libre"', 'cursive'],
+        'averia-sans': ['"Averia Sans Libre"', 'cursive'],
         'nunito': ['Nunito', 'sans-serif'],
         'open-sans': ['"Open Sans"', 'sans-serif'],
         'roboto-mono': ['"Roboto Mono"', 'monospace'],
       },
       maxWidth: {
-        'home-column': '400px'
+        'home-column': '350px'
       },
       spacing: {
         'section': '1.5rem'
