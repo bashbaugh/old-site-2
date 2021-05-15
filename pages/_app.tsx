@@ -1,18 +1,11 @@
 import '../styles/globals.css'
-import { motion } from 'framer-motion'
+import { AnimatePresence } from 'framer-motion'
 
 function MyApp({ Component, pageProps, router }) {
   return (
-      <motion.div key={router.route} initial="pageInitial" animate="pageAnimate" variants={{
-        pageInitial: {
-          x: '100vw',
-        },
-        pageAnimate: {
-          x: '0vw'
-        }
-      }} transition={{ bounce: 0 }}>
+      <AnimatePresence initial={false}>
         <Component {...pageProps} key={router.route}/>
-      </motion.div>
+      </AnimatePresence>
       // <AnimateSharedLayout type='crossfade'>
       //   <Component {...pageProps} key={router.route}/>
       // </AnimateSharedLayout>

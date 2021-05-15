@@ -10,9 +10,10 @@ export default function MorePage() {
 
   return (
     <motion.div
-      className='absolute top-0 left-0 min-h-screen min-w-screen z-40 bg-bg-dark'
-      initial={{ x: '100vw', display: 'absolute' }}
+      className='absolute top-0 left-0 right-0 min-h-screen z-40 bg-bg-dark'
+      initial={{ x: '100vw' }}
       animate={{ x: '0vw' }}
+      exit={{ x: '100vw '}}
       transition={{ bounce: 0, duration: 0.5 }}
       onAnimationStart={() => {
         document.body.style.overflow = 'hidden'
