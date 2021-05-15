@@ -28,7 +28,7 @@ const ProjectCard: React.FC<{
       </span>
     </div>
 
-    <div 
+    <div
       ref={ref} 
       className={clsx('transition-all ease-out overflow-hidden')}
       style = {{
@@ -37,7 +37,7 @@ const ProjectCard: React.FC<{
     >
       <div className='pb-2 opacity-90'>
         <div className='mb-2'>
-          {links && Object.entries(links).map(([name, href]) => <Link underline href={href} className='text-sm inline-block pr-2'>{name}</Link>)}
+          {links && Object.entries(links).map(([name, href]) => <Link underline href={href} className='font-roboto-mono text-sm inline-block pr-2'>{name}</Link>)}
         </div>
         <ReactMarkdown>{description}</ReactMarkdown>
         <div className='my-3'>

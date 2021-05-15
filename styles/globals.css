@@ -23,4 +23,6 @@ body {
   @apply bg-bg-dark;
   @apply text-text-light;
   @apply font-open-sans;
+
+  /* overflow: hidden; */
 }

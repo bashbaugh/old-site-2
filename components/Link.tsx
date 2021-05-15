@@ -9,7 +9,7 @@ const Link: React.FC<{
 }> = ({ children, href, className, underline }) => {
 
   return <NextLink href={href}>
-    <a target='_blank' rel='noopener' className={clsx('text-link-dark font-roboto-mono font-semibold', underline && 'underline', className)}>
+    <a target='_blank' rel='noopener' className={clsx('text-link-dark font-semibold', underline && 'underline', className)}>
       {children}
     </a>
   </NextLink>
