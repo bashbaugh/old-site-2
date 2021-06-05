@@ -2,6 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  body {
+    @apply bg-bg-dark;
+    @apply text-text-light;
+    @apply font-open-sans;
+  
+    /* overflow: hidden; */
+  }
+
+  ::selection {
+    background: #465775;
+  }
+}
+
 /* html,
 body {
   padding: 0;
@@ -18,11 +32,3 @@ a {
 * {
   box-sizing: border-box;
 } */
-
-body {
-  @apply bg-bg-dark;
-  @apply text-text-light;
-  @apply font-open-sans;
-
-  /* overflow: hidden; */
-}

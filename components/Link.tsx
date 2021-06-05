@@ -6,10 +6,11 @@ const Link: React.FC<{
   href: string
   className?: string
   underline?: boolean
-}> = ({ children, href, className, underline }) => {
+  newTab?: boolean
+}> = ({ children, href, className, underline, newTab }) => {
 
   return <NextLink href={href}>
-    <a target='_blank' rel='noopener' className={clsx('text-link-dark font-semibold', underline && 'underline', className)}>
+    <a target={ newTab && '_blank'} rel='noopener' className={clsx('text-link-dark font-semibold', underline && 'underline', className)}>
       {children}
     </a>
   </NextLink>
