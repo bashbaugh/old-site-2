@@ -2,8 +2,10 @@ import Layout from '../components/SimpleLayout'
 import { FiMail } from 'react-icons/fi'
 import RoundButton from '../components/RoundButton'
 import { motion } from 'framer-motion'
+import { cmsApi } from '../lib/cms'
+import ReactMarkdown from 'react-markdown'
 
-export default function MorePage() {
+export default function MorePage({ data }) {
   // setTimeout(() => {
   //   debugger;
   // }, 2000)
@@ -23,16 +25,23 @@ export default function MorePage() {
       }}
     >
       <Layout withLeftBar centered backButtonHref='/'>
-        <div className='opacity-90'>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse quis cursus felis. Vivamus tempus neque at hendrerit elementum. Nunc quis ante in sapien vulputate placerat vel vitae lacus. Nunc eget orci tempus, fermentum nibh eget, vulputate ante. Quisque arcu nunc, dapibus id auctor eget, congue eu enim. Mauris quis euismod nisi. Sed a elit ullamcorper, egestas elit a, lacinia lorem. Etiam tristique, ex quis fringilla accumsan, tortor turpis condimentum sapien, condimentum interdum orci orci eget leo. Fusce tristique lectus purus, a gravida mi pretium nec. Quisque id dictum velit. Curabitur at commodo libero. Integer pulvinar cursus pharetra. In metus sem, porttitor nec maximus ut, vehicula vel mi. Nam suscipit fermentum consequat.
-          </p>
-        </div>
+        <ReactMarkdown className='content opacity-90'>{ data.about }</ReactMarkdown>
         <div className='my-section flex gap-5'>
-              <RoundButton icon={FiMail} href='mailto:ben@benjaminashbaugh.me' />
-              {/* <RoundButton icon={FiLinkedin} href='' /> */}
-            </div>
+          <RoundButton icon={FiMail} href='mailto:ben@benjaminashbaugh.me' />
+          {/* <RoundButton icon={FiLinkedin} href='' /> */}
+        </div>
       </Layout>
     </motion.div>
   )
+}
+
+export async function getStaticProps() {
+  const { data } = await cmsApi.get('/more-page')
+
+  return {
+    props: {
+      data
+    },
+    revalidate: 30
+  }
 }

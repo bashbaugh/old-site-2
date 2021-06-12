@@ -16,14 +16,14 @@ const Column = ({ children }) => <div
   {children}
 </div>
 
-export default function Home() {
+export default function Home({ highlights }) {
   return <div className={clsx(
     'lg:px-16 py-8 sm:py-16',
     'flex flex-col items-center lg:flex-row lg:items-start lg:justify-center gap-x-6 xl:gap-x-20'
   )}>
     <Column>
       <h2 className='font-open-sans text-2xl'>👋 Hi. I’m</h2>
-      <h1 className='font-averia-sans text-4xl font-bold pt-2 pb-4 pl-[1px]'>Benjamin Ashbaugh</h1>
+      <h1 className='font-averia-sans text-4xl font-bold pt-2 mb-4 pl-[1px]'>Benjamin Ashbaugh</h1>
       <p>I’m a student and software dev from Colorado, interested in web development, AI, and computational physics.  🚀 </p>
       <SectionLink href='/more' icon={FiChevronRight}>More</SectionLink>
       <SectionLink href='https://timeline.benjaminashbaugh.me' icon={MdTimeline}>Timeline &nbsp;</SectionLink>
@@ -34,18 +34,13 @@ export default function Home() {
 
       <HomeSection title='Highlights'>
         <div className='flex flex-col gap-3'>
-          <HighlightCard 
-            title='BrainBook' 
-            description='Take awesome notes that eventually become a graph of knowledge, ideas or anything else.' 
-            href='https://brainbook.app'
-            image='/img/brainbook-icon1.svg'
-          />
-          {/* <HighlightCard 
-            title='Simply Synonyms' 
-            description='A simple browser extension to help you find synonyms with minimal effort.' 
-            href='https://github.com/Simply-Synonyms/simply-synonyms'
-            image='/img/synonyms_s.png'
-          /> */}
+          {highlights.map((h: any) => <HighlightCard 
+            key={h.id}
+            title={h.title}
+            description={h.description}
+            href={h.url}
+            image={h.thumbnail.url}
+          />)}
         </div>
       </HomeSection>
     </Column>

@@ -37,12 +37,12 @@ const ProjectCard: React.FC<{
     >
       <div className='pb-2 opacity-90'>
         <div className='mb-2'>
-          {links && Object.entries(links).map(([name, href]) => <Link underline href={href} className='font-roboto-mono text-sm inline-block pr-2'>{name}</Link>)}
+          {links && Object.entries(links).map(([name, href]) => <Link key={name} underline href={href} className='font-roboto-mono text-sm inline-block pr-2'>{name}</Link>)}
         </div>
         <ReactMarkdown>{description}</ReactMarkdown>
         <div className='my-3'>
           {technologies && technologies.map(t => 
-            <span className='mr-2 px-1 py-0.5 rounded-sm bg-white bg-opacity-25 hover:bg-opacity-30'>
+            <span key={t} className='mr-2 px-1 py-0.5 rounded-sm bg-white bg-opacity-25 hover:bg-opacity-30'>
               {t}
             </span>
           )}
