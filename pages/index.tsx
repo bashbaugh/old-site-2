@@ -25,15 +25,14 @@ export default function Index(props) {
 }
 
 export async function getStaticProps() {
-  // const { data: home } = await cmsApi.get('/homepage')
+  const { data: home } = await cmsApi.get('/homepage')
   const { data: highlights } = await cmsApi.get('/highlights')
-  const { data: projects } = await cmsApi.get('/projects')
-  const { data: links } = await cmsApi.get('/links')
-  const { data: posts } = await cmsApi.get('/posts')
+  const { data: projects } = await cmsApi.get('/projects?_sort=date:DESC')
+  const { data: posts } = await cmsApi.get('/posts?_sort=date:DESC')
 
   return {
     props: {
-      highlights, projects, links, posts
+      home, highlights, projects, posts
     },
     revalidate: 10
   }

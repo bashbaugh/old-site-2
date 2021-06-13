@@ -516,7 +516,8 @@
     "schemas": {
       "Projects": {
         "required": [
-          "id"
+          "id",
+          "date"
         ],
         "properties": {
           "id": {
@@ -537,6 +538,10 @@
           "links": {
             "type": "object"
           },
+          "date": {
+            "type": "string",
+            "format": "date"
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -544,6 +549,9 @@
         }
       },
       "NewProjects": {
+        "required": [
+          "date"
+        ],
         "properties": {
           "title": {
             "type": "string"
@@ -559,6 +567,10 @@
           },
           "links": {
             "type": "object"
+          },
+          "date": {
+            "type": "string",
+            "format": "date"
           },
           "published_at": {
             "type": "string",

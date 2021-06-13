@@ -320,6 +320,9 @@
           },
           "introduction": {
             "type": "string"
+          },
+          "links": {
+            "type": "object"
           }
         }
       },
@@ -327,6 +330,9 @@
         "properties": {
           "introduction": {
             "type": "string"
+          },
+          "links": {
+            "type": "object"
           },
           "created_by": {
             "type": "string"

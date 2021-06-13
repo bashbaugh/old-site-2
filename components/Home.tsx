@@ -16,7 +16,7 @@ const Column = ({ children }) => <div
   {children}
 </div>
 
-export default function Home({ highlights }) {
+export default function Home({ highlights, home, projects, posts }) {
   return <div className={clsx(
     'lg:px-16 py-8 sm:py-16',
     'flex flex-col items-center lg:flex-row lg:items-start lg:justify-center gap-x-6 xl:gap-x-20'
@@ -24,7 +24,7 @@ export default function Home({ highlights }) {
     <Column>
       <h2 className='font-open-sans text-2xl'>👋 Hi. I’m</h2>
       <h1 className='font-averia-sans text-4xl font-bold pt-2 mb-4 pl-[1px]'>Benjamin Ashbaugh</h1>
-      <p>I’m a student and software dev from Colorado, interested in web development, AI, and computational physics.  🚀 </p>
+      <p>{home.introduction}</p>
       <SectionLink href='/more' icon={FiChevronRight}>More</SectionLink>
       <SectionLink href='https://timeline.benjaminashbaugh.me' icon={MdTimeline}>Timeline &nbsp;</SectionLink>
       <div className='my-section flex gap-5'>
@@ -46,43 +46,31 @@ export default function Home({ highlights }) {
     </Column>
     <Column>
       <HomeSection title='Projects'>
-        <ProjectCard  
-          title='Hack Club Cow'
-          summary='GPT-3 cow chatbot'
-          description="Using OpenAI's GPT-3 API, I created a simple AI chatbot for Slack that thinks it's a cow."
-          links={{
-            github: 'https://github.com/hackclub/cow2',
-          }}
-          technologies={['Node.js', 'GPT-3']}
-        />
-        {/* <ProjectCard  
-          title='Hack Club Cow'
-          summary='GPT-3 cow chatbot'
-        /> */}
+        {projects.map((p: any) => <ProjectCard  
+          title={p.title}
+          summary={p.summary}
+          description={p.description}
+          links={p.links}
+          technologies={p.technologies}
+        />)}
       </HomeSection>
       <HomeSection title='Links'>
-        <Link newTab href='https://stackexchange.com/users/11955944/scitronboy?tab=accounts' className='font-averia-sans block'>Stack Overflow</Link>
-        <Link newTab href='https://stackexchange.com/users/11955944/scitronboy?tab=accounts' className='font-averia-sans block'>Lorem Ipsum</Link>
+        {Object.entries(home.links).map(([text, url]) => <Link newTab href={url as string} className='font-averia-sans block'>
+          {text}
+        </Link>)}      
       </HomeSection>
     </Column>
     <Column>
       <HomeSection title='Writing &amp; Other'>
         <SectionLink href='https://notes.benjaminashbaugh.me' block>Notebook </SectionLink>
-        
-        <PostCard 
-          title='An Article' 
-          type='article' 
-          href='/post'
-          date={new Date()} 
-          summary='Lorem ipsum?? Lorem. Do not eat too much cheese.' 
-        />
-        <PostCard 
-          title='How to Be Awesome, a Step By Step Guide' 
-          type='tutorial' 
-          href='/tut'
-          date={new Date()} 
-          summary='The first step to being awesome is being named Benjamin.' 
-        />
+
+        {posts.map((p: any) => <PostCard 
+          title={p.title}
+          type={p.type}
+          href={p.url}
+          date={new Date(p.date)}
+          summary={p.summary}
+        />)}
       </HomeSection>
     </Column>
   </div>

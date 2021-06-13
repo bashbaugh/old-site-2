@@ -18,6 +18,14 @@
   div.content p {
     @apply my-3;
   }
+
+  div.content a {
+    @apply underline;
+  }
+
+  div.content img {
+    @apply rounded-sm;
+  }
 }
 
 /* html,

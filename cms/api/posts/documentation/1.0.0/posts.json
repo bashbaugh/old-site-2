@@ -525,7 +525,7 @@
           "url": {
             "type": "string"
           },
-          "name": {
+          "title": {
             "type": "string"
           },
           "type": {
@@ -541,7 +541,7 @@
             "type": "string",
             "format": "date"
           },
-          "description": {
+          "summary": {
             "type": "string"
           },
           "published_at": {
@@ -555,7 +555,7 @@
           "url": {
             "type": "string"
           },
-          "name": {
+          "title": {
             "type": "string"
           },
           "type": {
@@ -571,7 +571,7 @@
             "type": "string",
             "format": "date"
           },
-          "description": {
+          "summary": {
             "type": "string"
           },
           "published_at": {
