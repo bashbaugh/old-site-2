@@ -11,36 +11,41 @@
     /* overflow: hidden; */
   }
 
+  body::-webkit-scrollbar {
+    width: 10px;
+
+  }
+  
+  /* Track */
+  body::-webkit-scrollbar-track {
+    @apply bg-white;
+    @apply bg-opacity-5;
+  }
+  
+  /* Handle */
+  body::-webkit-scrollbar-thumb {
+    @apply bg-scrollbar-dark shadow-xl;
+  }
+  
+  /* Handle on hover */
+  body::-webkit-scrollbar-thumb:hover {
+    @apply bg-opacity-80
+  }
+
   ::selection {
-    background: #465775;
+    @apply bg-selection-dark;
   }
 
   div.content p {
     @apply my-3;
   }
 
-  div.content a {
+  /* div.content a {
     @apply underline;
-  }
+  } */
 
   div.content img {
     @apply rounded-sm;
+    @apply shadow-md;
   }
 }
-
-/* html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
-} */

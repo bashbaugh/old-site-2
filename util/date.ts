@@ -3,4 +3,4 @@ const monthNames = ["jan.", "feb.", "march", "april", "may", "june",
 ]
 
 export const dateToPrettyString = (date: Date) => 
-  `${monthNames[date.getMonth()]} ${date.getDate()}${date.getFullYear() === new Date().getFullYear() ? '' : ', ' + date.getFullYear().toString().slice(2)}`
+  `${monthNames[date.getMonth()]} ${date.getDate()}${date.getFullYear() === new Date().getFullYear() ? '' : ', \'' + date.getFullYear().toString().slice(2)}`

@@ -4,11 +4,15 @@ import Link from './Link'
 import ReactMarkdown from 'react-markdown'
 
 const components = {
-  link ({ children, href }) {
-    return <Link newTab underline href={href}>children</Link>
-  }
+  a (props) {
+    return <Link href={props.href}>{props.children}</Link>
+  },
+  img (props) {
+    return <a target='_blank' href={props.src}><img {...props} /></a> 
+  },
 }
 
-const SectionLink: React.FC = ({ children }) => <ReactMarkdown className='content' components={components}>{children}</ReactMarkdown>
+const MarkdownContent: React.FC<{ md: string, className?: string }> = ({ md, className }) => 
+  <ReactMarkdown className={clsx('content', className)} components={components}>{md}</ReactMarkdown>
 
-export default SectionLink
+export default MarkdownContent

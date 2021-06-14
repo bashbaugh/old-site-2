@@ -3,49 +3,56 @@ import Link from './Link'
 import ReactMarkdown from 'react-markdown'
 import React, { useRef, useState } from 'react'
 import clsx from 'clsx'
+import MarkdownContent from './MarkdownContent'
 
 const ProjectCard: React.FC<{
+  isOpen: boolean
+  onClick: () => void
   title: string
   summary: string
   description: string
-  links?: {
-    [name: string]: string
-  }
+  links?: [name: string, url: string][]
   technologies?: string[]
-}> = ({ title, links, description, summary, technologies }) => {
-  const [isOpen, setOpen] = useState(false)
+}> = ({ isOpen, onClick, title, links, description, summary, technologies }) => {
   const ref = useRef()
 
-  return <div>
-    <div className='flex items-center cursor-pointer select-none py-2' onClick={() => setOpen(o => !o)}>
-      <span className='w-full'>
-        <span className='font-nunito font-bold mr-2'>{title}</span>
-        <span className='font-nunito font-normal text-faded-light'>{summary}</span>
-      </span>
-      <span className={clsx('dropdown-arrow text-text-light', isOpen && 'active')}>
-        <span />
-        <span />        
-      </span>
-    </div>
+  return <div className='relative'>
+    <div className={clsx(
+      'z-0 absolute -left-3 -right-3 h-full rounded-lg border-2 border-transparent transition-all duration-300', 
+      isOpen && 'border-gray-800 bg-black bg-opacity-10'
+    )}/>
 
-    <div
-      ref={ref} 
-      className={clsx('transition-all ease-out overflow-hidden')}
-      style = {{
-        maxHeight: isOpen ? (ref.current as any)?.scrollHeight : 0
-      }}
-    >
-      <div className='pb-2 opacity-90'>
-        <div className='mb-2'>
-          {links && Object.entries(links).map(([name, href]) => <Link key={name} underline href={href} className='font-roboto-mono text-sm inline-block pr-2'>{name}</Link>)}
-        </div>
-        <ReactMarkdown className='content'>{description}</ReactMarkdown>
-        <div className='mt-3'>
-          {technologies && technologies.map(t => 
-            <div key={t} className='inline-block mr-2 mb-2 px-1 py-0.5 rounded-sm bg-white bg-opacity-25 hover:bg-opacity-30'>
-              {t}
-            </div>
-          )}
+    <div className='relative z-10'>
+      <div className='flex items-center cursor-pointer select-none py-2' onClick={onClick}>
+        <span className='w-full'>
+          <span className='font-nunito font-bold mr-2'>{title}</span>
+          <span className='font-nunito font-normal text-faded-light'>{summary}</span>
+        </span>
+        <span className={clsx('dropdown-arrow text-text-light', isOpen && 'active')}>
+            <span />
+            <span />        
+          </span>
+      </div>
+
+      <div
+        ref={ref} 
+        className={clsx('transition-all ease-out overflow-hidden')}
+        style = {{
+          maxHeight: isOpen ? (ref.current as any)?.scrollHeight : 0
+        }}
+      >
+        <div className='pb-2 opacity-90'>
+          <div className='mb-2'>
+            {links && links.map(([name, href]) => <Link key={name} underline href={href} className='font-roboto-mono text-sm inline-block pr-2'>{name}</Link>)}
+          </div>
+          <MarkdownContent md={description} />
+          <div className='mt-3'>
+            {technologies && technologies.map(t => 
+              <div key={t} className='inline-block mr-2 mb-2 px-1 py-0.5 rounded-sm bg-white bg-opacity-25 hover:bg-opacity-30'>
+                {t}
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </div>

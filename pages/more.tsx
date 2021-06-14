@@ -4,6 +4,7 @@ import RoundButton from '../components/RoundButton'
 import { motion } from 'framer-motion'
 import { cmsApi } from '../lib/cms'
 import ReactMarkdown from 'react-markdown'
+import MarkdownContent from '../components/MarkdownContent'
 
 export default function MorePage({ data }) {
   // setTimeout(() => {
@@ -25,7 +26,7 @@ export default function MorePage({ data }) {
       }}
     >
       <Layout withLeftBar centered backButtonHref='/'>
-        <ReactMarkdown className='content opacity-90'>{ data.about }</ReactMarkdown>
+        <MarkdownContent className='opacity-90' md={data.about} />
         <div className='my-section flex gap-5'>
           <RoundButton icon={FiMail} href='mailto:ben@benjaminashbaugh.me' />
           {/* <RoundButton icon={FiLinkedin} href='' /> */}

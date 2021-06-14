@@ -25,6 +25,12 @@ module.exports = {
         },
         highlight: {
           dark: '#08DC90'
+        },
+        scrollbar: {
+          dark: '#08DC90'
+        },
+        selection: {
+          dark: '#ad8d32'
         }
       },
       fontFamily: {

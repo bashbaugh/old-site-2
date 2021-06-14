@@ -13,10 +13,10 @@ const PostCard: React.FC<{
   date: Date
 }> = ({ title, summary, href, type, date }) => {
   const card = <div className={clsx('bg-white bg-opacity-0 transition duration-75 hover:bg-opacity-5 p-2 border-b-2 border-border-dark')}>
-    <div className='flex items-center pb-2'>
+    <div className='flex items-center'>
       <span className='font-nunito font-bold'>{title}</span>
-      <span className='font-nunito font-light text-faded-light'>&nbsp;&nbsp;// {type} &middot; {dateToPrettyString(date)}</span>
     </div>
+    <div className='font-nunito font-light text-faded-light pb-2'>// {type} &middot; {dateToPrettyString(date)}</div>
     <div className='text-faded-light text-sm'>
       {summary}
     </div>
