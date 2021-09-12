@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "deploy-cms": "git subtree push --prefix cms heroku master"
+    "deploy-cms": "git subtree push --prefix cms heroku master",
+    "format": "prettier --write \"**/*.{ts,tsx}\""
   },
   "dependencies": {
     "@react-three/drei": "^5.3.1",

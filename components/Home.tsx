@@ -72,7 +72,7 @@ export default function Home({ highlights, home, projects, posts }) {
     </Column>
     <Column>
       <HomeSection title='Writing &amp; Other'>
-        <SectionLink href='https://notes.benjaminashbaugh.me' block>Notebook </SectionLink>
+        <SectionLink href='https://notes.benjaminashbaugh.me' block>Notebook & Quote Collection </SectionLink>
 
         {posts.map((p: any) => <PostCard 
           key={p.id}
