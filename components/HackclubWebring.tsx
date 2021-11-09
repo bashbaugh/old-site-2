@@ -4,21 +4,20 @@ export default function HackclubWebring() {
       <a
         href="https://webring.hackclub.com/"
         id="previousBtn"
-        class="webring-anchor"
+        className="webring-anchor"
         title="Previous"
       >
         ‹
       </a>
       <a
         href="https://webring.hackclub.com/"
-        class="webring-logo"
+        className="webring-logo"
         title="Hack Club Webring"
-        alt="Hack Club Webring"
       ></a>
       <a
         href="https://webring.hackclub.com/"
         id="nextBtn"
-        class="webring-anchor"
+        className="webring-anchor"
         title="Next"
       >
         ›
