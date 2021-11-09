@@ -11,7 +11,7 @@ const Meta: React.FC<{
 }> = ({
   title: pageTitle,
   description = 'Benjamin Ashbaugh is a creative developer from Colorado',
-  image = 'https://benjaminashbaugh.me/img/og/default.png',
+  image = 'https://benjaminashbaugh.me/img/og/basic.png',
   children,
 }) => {
   const title = pageTitle ? `${pageTitle} // ${name}` : name
