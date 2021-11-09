@@ -7,13 +7,13 @@ export default function Index(props) {
   return (
     <motion.div
       initial={{
-        opacity: 1
+        opacity: 1,
       }}
       animate={{
-        opacity: 1
+        opacity: 1,
       }}
       exit={{
-        opacity: 1
+        opacity: 1,
       }}
       transition={{ duration: 0.5 }}
     >
@@ -32,8 +32,11 @@ export async function getStaticProps() {
 
   return {
     props: {
-      home, highlights, projects, posts
+      home,
+      highlights,
+      projects,
+      posts,
     },
-    revalidate: 10
+    revalidate: 10,
   }
 }
