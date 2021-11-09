@@ -19,6 +19,7 @@ class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
+          <script async defer src="https://visitorcounter.benjaminashbaugh.me/latest.js"></script>
         </body>
       </Html>
     )
