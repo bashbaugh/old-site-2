@@ -3,10 +3,12 @@ import { motion } from 'framer-motion'
 import Home from '../components/Home'
 import { cmsApi } from '../lib/cms'
 import Meta from '../components/Meta'
+import Background from '../components/Background'
 
 export default function Index(props) {
   return (
     <>
+      <Background />
       <Meta />
       <motion.div
         initial={{

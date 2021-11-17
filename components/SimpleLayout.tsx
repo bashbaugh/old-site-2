@@ -13,7 +13,7 @@ export default function Layout({
   return (
     <div
       className={clsx(
-        'overflow-hidden max-w-screen min-h-screen bg-bg-dark px-4 flex flex-col',
+        'overflow-hidden max-w-screen min-h-screen px-4 flex flex-col',
         withLeftBar && 'border-l-8 border-highlight-dark',
         centered && 'justify-center items-center'
       )}
