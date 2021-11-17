@@ -35,15 +35,15 @@ const ProjectCard: React.FC<{
 
       <div className="relative z-10">
         <div
-          className="flex items-center cursor-pointer select-none py-2"
+          className="flex items-center cursor-pointer select-none py-3"
           onClick={onClick}
         >
-          <span className="w-full">
-            <span className="font-nunito font-bold mr-2">{title}</span>
-            <span className="font-nunito font-normal text-faded-light">
+          <div className="w-full">
+            <div className="font-nunito font-bold mr-2">{title}</div>
+            <div className="font-nunito font-normal text-faded-light">
               {summary}
-            </span>
-          </span>
+            </div>
+          </div>
           <span
             className={clsx(
               'dropdown-arrow text-text-light',
@@ -93,7 +93,6 @@ const ProjectCard: React.FC<{
       </div>
 
       <style jsx>{`
-        /* Inspired by https://codepen.io/simonbreiter/pen/oLJAKy */
         .dropdown-arrow {
           width: 1rem;
           height: 1rem;

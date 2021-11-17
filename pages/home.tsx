@@ -1,5 +1,4 @@
 import { useEffect } from 'react'
-import Layout from '../components/SimpleLayout'
 import { Canvas, useLoader, useThree } from '@react-three/fiber'
 import { useGLTF } from '@react-three/drei'
 import { FontLoader } from 'three'

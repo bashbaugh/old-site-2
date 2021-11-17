@@ -1,4 +1,4 @@
-import Layout from '../components/SimpleLayout'
+import Layout from './SimpleLayout'
 import { FiChevronRight, FiTwitter, FiGithub, FiMail } from 'react-icons/fi'
 import { MdTimeline } from 'react-icons/md'
 import RoundButton from '../components/RoundButton'
