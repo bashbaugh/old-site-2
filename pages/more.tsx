@@ -34,7 +34,7 @@ export default function MorePage({ data }) {
             md={data.about}
           />
           <div className="my-section flex gap-5">
-            <RoundButton icon={FiMail} href="mailto:ben@benjaminashbaugh.me" />
+            <RoundButton icon={FiMail} href="mailto:benjamin@benjaminashbaugh.me" />
             {/* <RoundButton icon={FiLinkedin} href='' /> */}
           </div>
         </Layout>
