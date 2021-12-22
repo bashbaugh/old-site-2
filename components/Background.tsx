@@ -23,7 +23,7 @@ class Blob {
   targetDistance: number
   rotationFactorVariance: number
 
-  updatePath () {
+  updatePath() {
     this.path.position.x = this.origin.x + Math.cos(this.angle) * this.distance
     this.path.position.y = this.origin.y + Math.sin(this.angle) * this.distance
   }
@@ -33,20 +33,23 @@ class Blob {
     this.angle = angle
     const maxDistance = Math.min(window.innerWidth / 2, window.innerHeight / 2)
     this.targetDistance = random(0.2 * maxDistance, 0.9 * maxDistance)
-    this.rotationFactorVariance = random(-MAX_ROTATION_FACTOR_VARIANCE, MAX_ROTATION_FACTOR_VARIANCE)
+    this.rotationFactorVariance = random(
+      -MAX_ROTATION_FACTOR_VARIANCE,
+      MAX_ROTATION_FACTOR_VARIANCE
+    )
     this.spawnTime = new Date().getTime()
 
     this.path = new Paper.Path.Circle({
       center: this.origin,
       radius: Math.floor(Math.random() * 6) + 3,
-      fillColor: '#08DC9022'
+      fillColor: '#08DC9022',
     })
   }
 
   update(delta: number) {
     const targetDiff = this.targetDistance - this.distance
     // Decelerate towards the target distance
-    this.distance += (1 - Math.min(1, 1 / targetDiff * DISTANCE_DECEL_FACTOR))
+    this.distance += 1 - Math.min(1, (1 / targetDiff) * DISTANCE_DECEL_FACTOR)
     const progress = this.distance / this.targetDistance
     this.angle += progress * ROTATION_FACTOR + this.rotationFactorVariance
     this.updatePath()
@@ -67,7 +70,7 @@ function draw() {
     if (blobs.length === NUM_BLOBS) clearInterval(spawnInterval)
   }, SPAWN_RATE)
 
-  Paper.view.onFrame = e => {
+  Paper.view.onFrame = (e) => {
     for (const blob of blobs) blob.update(e.delta)
 
     // if (blobs.length > NUM_BLOBS) {
@@ -77,7 +80,7 @@ function draw() {
   }
 }
 
-const Background: React.FC = props => {
+const Background: React.FC = (props) => {
   const ref = useRef()
 
   useEffect(() => {
@@ -94,7 +97,7 @@ const Background: React.FC = props => {
     <canvas
       ref={ref}
       {...props}
-      className='fixed top-0 left-0 w-full h-full z-[-1]'
+      className="fixed top-0 left-0 w-full h-full z-[-1]"
     />
   )
 }

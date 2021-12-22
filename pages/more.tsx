@@ -34,8 +34,33 @@ export default function MorePage({ data }) {
             md={data.about}
           />
           <div className="my-section flex gap-5">
-            <RoundButton icon={FiMail} href="mailto:benjamin@benjaminashbaugh.me" />
+            <RoundButton
+              icon={FiMail}
+              href="mailto:benjamin@benjaminashbaugh.me"
+            />
             {/* <RoundButton icon={FiLinkedin} href='' /> */}
+          </div>
+          <div className='text-[0.6rem]'>
+            <details>
+              <summary>PGP: CE7ED7ED5EF0F149 (ed25519) <strong>careful</strong></summary>
+              <pre>
+                {`-----BEGIN PGP PUBLIC KEY BLOCK-----
+
+mDMEYcKVgBYJKwYBBAHaRw8BAQdAQU/lAZZUPnG2wvNUBLIIwz+h38edrfT7tOO4
+vMscfJG0QEJlbmphbWluIEFzaGJhdWdoIChkb24ndCBmdWNrIHRoaXMgdXApIDxw
+Z3BAYmVuamFtaW5hc2hiYXVnaC5tZT6ImgQTFgoAQhYhBO6XK5FjbfgxvKSfWs5+
+1+1e8PFJBQJhwpWAAhsDBQkB4TOABQsJCAcCAyICAQYVCgkICwIEFgIDAQIeBwIX
+gAAKCRDOftftXvDxSaeqAP4u6dcyfaa9wkg675wUbSFadGkeCbY3/IZNE9AvTXBs
+EAD+Oeg6zJW0l3IbyDe8iaPyeKYbkpFC8BQPsPbscroVhAa4OARhwpWAEgorBgEE
+AZdVAQUBAQdAN6JjoXojVdb5HorLD3BcmKe1RVV7DbnMksQmYCizZiADAQgHiH4E
+GBYKACYWIQTulyuRY234Mbykn1rOftftXvDxSQUCYcKVgAIbDAUJAeEzgAAKCRDO
+ftftXvDxSanIAQDlNUd6MTIUgr9yj3JA5Q1R/GaM8mp0ksFcULsu64YENgEA+bQ8
+vfmK+em+xlmw573UsBDkI7r1k21qScKmDDxebgQ=
+=cgP/
+-----END PGP PUBLIC KEY BLOCK-----
+`}
+              </pre>
+            </details>
           </div>
         </Layout>
       </motion.div>
