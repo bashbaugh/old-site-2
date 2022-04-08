@@ -32,7 +32,7 @@ export default function Index(props) {
 
 export async function getStaticProps() {
   const home = await sclient.fetch('*[_type == "homePage"][0]')
-  const projects = await sclient.fetch('*[_type == "project"]')
+  const projects = await sclient.fetch('*[_type == "project"] | order(date desc)')
 
   return {
     props: {

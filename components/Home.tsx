@@ -54,9 +54,9 @@ export default function Home({ home, projects }) {
           <RoundButton icon={FiGithub} href="https://github.com/bashbaugh" />
           <RoundButton
             icon={FiTwitter}
-            href="https://twitter.com/bashbaugh_"
+            href="https://twitter.com/benjamin_a0"
           />
-          <RoundButton icon={FiMail} href="mailto:hi@benjaminashbaugh.me" />
+          <RoundButton icon={FiMail} href="mailto:ben@benjaminashbaugh.me" />
         </div>
 
         <HomeSection title="Highlights">
