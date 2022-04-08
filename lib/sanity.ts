@@ -1,11 +1,11 @@
 import sanityClient from '@sanity/client'
 
-const projectId = 'vehv8d96'
-const dataset = 'production'
+export const sanity_projectId = 'vehv8d96'
+export const sanity_dataset = 'production'
 
 export default sanityClient({
-  projectId,
-  dataset,
+  projectId: sanity_projectId,
+  dataset: sanity_dataset,
   apiVersion: '2022-04-08',
   // token: process.env.SANITY_API_KEY,
   useCdn: process.env.NODE_ENV === 'production',
@@ -17,7 +17,7 @@ export const getImageUrl = (
   params?: Record<string, any>
 ) => {
   const [_, id, size, ext] = asset._ref.split('-')
-  const baseUrl = `https://cdn.sanity.io/images/${projectId}/${dataset}/${id}-${size}.${ext}`
+  const baseUrl = `https://cdn.sanity.io/images/${sanity_projectId}/${sanity_dataset}/${id}-${size}.${ext}`
 
   const queryString = new URLSearchParams({
     auto: 'format',
