@@ -9,7 +9,7 @@ export default function Layout({
   withLeftBar = false,
   centered = false,
   backButtonHref = '',
-  showHomeNav,
+  showHomeNav = false,
   noFooter = false,
 }) {
   return (
