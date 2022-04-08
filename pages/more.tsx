@@ -28,10 +28,7 @@ export default function MorePage({ data }) {
         }}
       >
         <Layout withLeftBar centered backButtonHref="/" noFooter>
-          <Content
-            className="opacity-90 tracking-wide"
-            blocks={data.about}
-          />
+          <Content className="opacity-90 tracking-wide" blocks={data.about} />
           <div className="my-section flex gap-5">
             <RoundButton
               icon={FiMail}

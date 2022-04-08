@@ -2,7 +2,8 @@ import S from "@sanity/desk-tool/structure-builder"
 
 const singletons = [
   ['homePage', 'Home'],
-  ['morePage', 'More']
+  ['morePage', 'More'],
+  ['hirePage', 'Hire'],
 ]
 
 const structure =  () =>

@@ -78,7 +78,9 @@ export default function Home({ home, projects }) {
           {projects.map((p: any) => (
             <ProjectCard
               isOpen={openProjectDropdown === p._id}
-              onClick={() => setOpenProject((c) => (c === p._id ? null : p._id))}
+              onClick={() =>
+                setOpenProject((c) => (c === p._id ? null : p._id))
+              }
               key={p._id}
               title={p.title}
               summary={p.summary}

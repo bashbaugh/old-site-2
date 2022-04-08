@@ -15,10 +15,10 @@ const serializers = {
     // },
   },
   marks: {
-    link (props) {
+    link(props) {
       return <Link href={props.mark.href}>{props.children}</Link>
     },
-  }
+  },
 }
 
 const Content: React.FC<{ blocks: any; className?: string }> = ({
@@ -26,7 +26,12 @@ const Content: React.FC<{ blocks: any; className?: string }> = ({
   className,
 }) => (
   <div className={clsx('content', className)}>
-    <BlockContent blocks={blocks} serializers={serializers} projectId={sanity_projectId} dataset={sanity_dataset} />
+    <BlockContent
+      blocks={blocks}
+      serializers={serializers}
+      projectId={sanity_projectId}
+      dataset={sanity_dataset}
+    />
   </div>
 )
 
