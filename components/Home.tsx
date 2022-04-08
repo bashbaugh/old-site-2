@@ -10,6 +10,7 @@ import PostCard from '../components/PostCard'
 import clsx from 'clsx'
 import Link from '../components/Link'
 import { useState } from 'react'
+import { getImageUrl } from '../lib/sanity'
 
 const Column = ({ children }) => (
   <div className="flex-grow w-[45rem] max-w-full lg:max-w-home-column">
@@ -17,7 +18,7 @@ const Column = ({ children }) => (
   </div>
 )
 
-export default function Home({ highlights, home, projects, posts }) {
+export default function Home({ home, projects }) {
   const [openProjectDropdown, setOpenProject] = useState<null | string>()
 
   return (
@@ -39,7 +40,7 @@ export default function Home({ highlights, home, projects, posts }) {
         <h1 className="font-averia-sans text-4xl font-bold pt-2 mb-4 pl-[1px]">
           Benjamin Ashbaugh
         </h1>
-        <p>{home.introduction}</p>
+        <p>{home.intro}</p>
         <SectionLink href="/more" icon={FiChevronRight}>
           More
         </SectionLink>
@@ -60,13 +61,13 @@ export default function Home({ highlights, home, projects, posts }) {
 
         <HomeSection title="Highlights">
           <div className="flex flex-col gap-3">
-            {highlights.map((h: any) => (
+            {home.highlights.map((h: any) => (
               <HighlightCard
-                key={h.id}
+                key={h._key}
                 title={h.title}
                 description={h.description}
                 href={h.url}
-                image={h.thumbnail.url}
+                image={getImageUrl(h.thumbnail.asset, { w: 200 })}
               />
             ))}
           </div>
@@ -76,9 +77,9 @@ export default function Home({ highlights, home, projects, posts }) {
         <HomeSection title="Projects">
           {projects.map((p: any) => (
             <ProjectCard
-              isOpen={openProjectDropdown === p.id}
-              onClick={() => setOpenProject((c) => (c === p.id ? null : p.id))}
-              key={p.id}
+              isOpen={openProjectDropdown === p._id}
+              onClick={() => setOpenProject((c) => (c === p._id ? null : p._id))}
+              key={p._id}
               title={p.title}
               summary={p.summary}
               description={p.description}
@@ -88,13 +89,13 @@ export default function Home({ highlights, home, projects, posts }) {
           ))}
         </HomeSection>
         <HomeSection title="Links">
-          {home.links.map(([text, url]) => (
+          {home.links.map(({ _key, title, url }) => (
             <Link
-              key={url}
+              key={_key}
               href={url as string}
               className="font-averia-sans block"
             >
-              {text}
+              {title}
             </Link>
           ))}
         </HomeSection>

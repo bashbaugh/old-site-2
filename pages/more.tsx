@@ -2,10 +2,9 @@ import Layout from '../components/SimpleLayout'
 import { FiMail } from 'react-icons/fi'
 import RoundButton from '../components/RoundButton'
 import { motion } from 'framer-motion'
-import { cmsApi } from '../lib/cms'
-import ReactMarkdown from 'react-markdown'
-import MarkdownContent from '../components/MarkdownContent'
 import Meta from '../components/Meta'
+import sclient from '../lib/sanity'
+import Content from '../components/Content'
 
 export default function MorePage({ data }) {
   // setTimeout(() => {
@@ -29,9 +28,9 @@ export default function MorePage({ data }) {
         }}
       >
         <Layout withLeftBar centered backButtonHref="/" noFooter>
-          <MarkdownContent
+          <Content
             className="opacity-90 tracking-wide"
-            md={data.about}
+            blocks={data.about}
           />
           <div className="my-section flex gap-5">
             <RoundButton
@@ -40,9 +39,11 @@ export default function MorePage({ data }) {
             />
             {/* <RoundButton icon={FiLinkedin} href='' /> */}
           </div>
-          <div className='text-[0.6rem]'>
+          <div className="text-[0.6rem]">
             <details>
-              <summary>PGP: CE7ED7ED5EF0F149 (ed25519) <strong>careful</strong></summary>
+              <summary>
+                PGP: CE7ED7ED5EF0F149 (ed25519) <strong>careful</strong>
+              </summary>
               <pre>
                 {`-----BEGIN PGP PUBLIC KEY BLOCK-----
 
@@ -69,12 +70,12 @@ vfmK+em+xlmw573UsBDkI7r1k21qScKmDDxebgQ=
 }
 
 export async function getStaticProps() {
-  const { data } = await cmsApi.get('/more-page')
+  const data = await sclient.fetch('*[_type == "morePage"][0]')
 
   return {
     props: {
       data,
     },
-    revalidate: 30,
+    revalidate: 10,
   }
 }

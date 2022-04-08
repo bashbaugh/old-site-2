@@ -3,14 +3,15 @@ import Link from './Link'
 import ReactMarkdown from 'react-markdown'
 import React, { useRef, useState } from 'react'
 import clsx from 'clsx'
-import MarkdownContent from './MarkdownContent'
+import BlockContent from '@sanity/block-content-to-react'
+import Content from './Content'
 
 const ProjectCard: React.FC<{
   isOpen: boolean
   onClick: () => void
   title: string
   summary: string
-  description: string
+  description: any
   links?: [name: string, url: string][]
   technologies?: string[]
 }> = ({
@@ -65,18 +66,18 @@ const ProjectCard: React.FC<{
           <div className="pb-2 opacity-90">
             <div className="mb-2">
               {links &&
-                links.map(([name, href]) => (
+                links.map(({ _key, title, url }: any) => (
                   <Link
-                    key={name}
+                    key={_key}
                     underline
-                    href={href}
+                    href={url}
                     className="font-roboto-mono text-sm inline-block pr-2"
                   >
-                    {name}
+                    {title}
                   </Link>
                 ))}
             </div>
-            <MarkdownContent md={description} />
+            {description && <Content blocks={description} />}
             <div className="mt-3">
               {technologies &&
                 technologies.map((t) => (

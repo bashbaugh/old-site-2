@@ -12,6 +12,8 @@
   "dependencies": {
     "@react-three/drei": "^5.3.1",
     "@react-three/fiber": "^6.2.2",
+    "@sanity/block-content-to-react": "^3.0.0",
+    "@sanity/client": "^3.3.0",
     "axios": "^0.21.1",
     "clsx": "^1.1.1",
     "framer-motion": "^4.1.16",
@@ -24,6 +26,7 @@
     "three": "^0.129.0"
   },
   "devDependencies": {
+    "@sanity/cli": "^2.29.5",
     "@types/react": "^17.0.5",
     "@types/three": "^0.129.1",
     "autoprefixer": "^10.2.5",
