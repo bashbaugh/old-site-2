@@ -6,6 +6,16 @@ export const singletonHire = {
   type: 'document',
   __experimental_actions: ['update', 'publish'],
   fields: [
-    getRichTextField('bio', 'Bio')
+    getRichTextField('bio', 'Bio'),
+    {
+      name: 'skills',
+      title: 'Skills',
+      type: 'array',
+      of: [
+        {
+          type: 'string',
+        }
+      ]
+    }
   ]
 }

@@ -11,6 +11,7 @@ import clsx from 'clsx'
 import Link from '../components/Link'
 import { useState } from 'react'
 import { getImageUrl } from '../lib/sanity'
+import { IoIosRocket } from 'react-icons/io'
 
 const Column = ({ children }) => (
   <div className="flex-grow w-[45rem] max-w-full lg:max-w-home-column">
@@ -49,6 +50,12 @@ export default function Home({ home, projects }) {
           icon={MdTimeline}
         >
           Timeline &nbsp;
+        </SectionLink>
+        <SectionLink
+          href="/hire"
+          icon={IoIosRocket}
+        >
+          Hire me &nbsp;
         </SectionLink>
         <div className="my-section flex gap-5">
           <RoundButton icon={FiGithub} href="https://github.com/bashbaugh" />

@@ -10,7 +10,7 @@ import Porfolio from '../../components/Portfolio'
 export default function HirePage({ data }) {
   return (
     <>
-      <Meta title="Hire Me" />
+      <Meta title="Hire Me" description="Independent creative developer. Get a professional yet affordable websites for your business, or hire a short-term developer and web designer" />
       <Layout withLeftBar showHomeNav centered noFooter>
         <div>
           <div className="max-w-xl flex gap-3">
@@ -29,8 +29,12 @@ export default function HirePage({ data }) {
 
               <Content blocks={data.bio} />
 
+              <div className='text-sm my-4'>
+                {data.skills.map(s => <div key={s} className='px-1 rounded-sm mt-2 mr-2 inline-block bg-yellow-700'>{s}</div>)}
+              </div>
+
               <NLink href="/hire/discovery">
-                <button className="bg-highlight-dark px-3 py-2 my-4 rounded-xl font-semibold text-xl hover:shadow-xl hover:ring-2 ring-highlight-dark transition-all">
+                <button className="my-4 bg-highlight-dark px-3 py-2 rounded-xl font-semibold tracking-wide text-2xl hover:shadow-xl hover:ring-2 ring-highlight-dark transition-all">
                   Hire Me
                 </button>
               </NLink>
