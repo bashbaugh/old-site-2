@@ -5,7 +5,6 @@ import Content from '../../components/Content'
 import { FaLaptopCode } from 'react-icons/fa'
 import { HiLocationMarker } from 'react-icons/hi'
 import NLink from 'next/link'
-import Porfolio from '../../components/Portfolio'
 
 export default function HirePage({ data }) {
   return (
