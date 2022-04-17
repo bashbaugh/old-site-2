@@ -3,49 +3,4 @@
 @tailwind utilities;
 
 @layer base {
-  body {
-    @apply bg-bg-dark;
-    @apply text-text-light;
-    @apply font-open-sans;
-  
-    /* overflow: hidden; */
-  }
-
-  body::-webkit-scrollbar {
-    width: 10px;
-
-  }
-  
-  /* Track */
-  body::-webkit-scrollbar-track {
-    @apply bg-white;
-    @apply bg-opacity-5;
-  }
-  
-  /* Handle */
-  body::-webkit-scrollbar-thumb {
-    @apply bg-scrollbar-dark shadow-xl;
-  }
-  
-  /* Handle on hover */
-  body::-webkit-scrollbar-thumb:hover {
-    @apply bg-opacity-80
-  }
-
-  ::selection {
-    @apply bg-selection-dark;
-  }
-
-  div.content p {
-    @apply my-3;
-  }
-
-  /* div.content a {
-    @apply underline;
-  } */
-
-  div.content img {
-    @apply rounded-sm;
-    @apply shadow-md;
-  }
 }
