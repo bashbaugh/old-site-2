@@ -17,10 +17,7 @@ export default function Footer() {
         </a>
       </p>
       <p className="inline py-1">
-        <a
-          href="https://www.buymeacoffee.com/bnjmn"
-          className="font-extrabold"
-        >
+        <a href="https://www.buymeacoffee.com/bnjmn" className="font-extrabold">
           ☕️ Buy me a coffee
         </a>
       </p>

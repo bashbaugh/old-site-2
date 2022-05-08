@@ -49,10 +49,7 @@ export default function Home({ home, projects }) {
         >
           Timeline &nbsp;
         </SectionLink>
-        <SectionLink
-          href="/hire"
-          icon={IoIosRocket}
-        >
+        <SectionLink href="/hire" icon={IoIosRocket}>
           Hire me &nbsp;
         </SectionLink>
         <div className="my-section flex gap-5">

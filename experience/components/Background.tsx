@@ -1,9 +1,10 @@
-import { useAspect, useTexture } from "@react-three/drei";
+import { useAspect, useTexture } from '@react-three/drei'
 
 const Background = (props: any) => (
-  <mesh scale={useAspect(5000, 3800, 3)} {...props}>
+  <mesh {...props}>
     <planeGeometry />
-    <meshBasicMaterial map={useTexture("/bg.jpg")} />
+    {/* <meshBasicMaterial map={useTexture('/bg.jpg')} /> */}
+    <meshBasicMaterial color={'#3474eb'} />
   </mesh>
 )
 
