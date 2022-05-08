@@ -19,6 +19,7 @@ class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
+          <script defer data-domain="benjaminashbaugh.me" src="https://p.bweb.app/js/plausible.js"></script>
           <script
             async
             defer
