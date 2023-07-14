@@ -39,6 +39,7 @@ export default function Home({ home, projects }) {
         <h1 className="font-averia-sans text-4xl font-bold pt-2 mb-4 pl-[1px]">
           Benjamin Ashbaugh
         </h1>
+        <p className="font-bold">Note: this site is VERY out-of-date and currently under reconstruction - please contact me for an up-to-date portfolio :)</p>
         <p>{home.intro}</p>
         <SectionLink href="/more" icon={FiChevronRight}>
           More
