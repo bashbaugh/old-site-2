@@ -39,7 +39,7 @@ export default function Home({ home, projects }) {
         <h1 className="font-averia-sans text-4xl font-bold pt-2 mb-4 pl-[1px]">
           Benjamin Ashbaugh
         </h1>
-        <p className="font-bold">This was an old website of mine that I made in ~2020. Please visit <a href="https://benjaminashbaugh.me">benjaminashbaugh.me</a> for a (possibly) up-to-date site.</p>
+        <p className="font-bold">This was an old website of mine that I made in ~2021. Please visit <a href="https://benjaminashbaugh.me">benjaminashbaugh.me</a> for a (possibly) up-to-date site.</p>
         <p>{home.intro}</p>
         <SectionLink href="/more" icon={FiChevronRight}>
           More
